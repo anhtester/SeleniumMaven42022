@@ -1,0 +1,31 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite" verbose="1">
+
+    <test name="Regression Test">
+        <classes>
+            <class name="anhtester.com.Bai9SetupTestNG.RunTest" />
+            <class name="anhtester.com.Bai9SetupTestNG.RunTest" />
+            <class name="anhtester.com.Bai9SetupTestNG.RunTest" />
+        </classes>
+    </test>
+
+<!--    <test name="Sanity Test">-->
+<!--        <packages>-->
+<!--            <package name="anhtester.com.Bai9SetupTestNG" />-->
+<!--        </packages>-->
+<!--    </test>-->
+
+    <test name="Smoke Test">
+        <classes>
+            <class name="anhtester.com.Bai9SetupTestNG.RunTest">
+                <methods>
+                    <include name="openProjectPage"/>
+                    <include name="openProjectPage"/>
+                    <include name="openProjectPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
