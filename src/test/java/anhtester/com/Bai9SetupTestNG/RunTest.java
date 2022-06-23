@@ -10,7 +10,7 @@ public class RunTest extends BaseTest {
     @Test
     public void loginCRM(){
         createDriver();
-
+        
         driver.get("https://hrm.anhtester.com/");
 
         driver.findElement(By.xpath("//input[@id='iusername']")).sendKeys("admin01");
