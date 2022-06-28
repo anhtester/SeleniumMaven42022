@@ -4,9 +4,7 @@
 
     <test name="Regression Test">
         <classes>
-            <class name="anhtester.com.Bai9SetupTestNG.RunTest" />
-            <class name="anhtester.com.Bai9SetupTestNG.RunTest" />
-            <class name="anhtester.com.Bai9SetupTestNG.RunTest" />
+            <class name="anhtester.com.Bai9SetupTestNG.TasksTest" />
         </classes>
     </test>
 
