@@ -15,7 +15,6 @@ public class HardAssert extends BaseTest {
         String expectedTitle = "Anh Tester - Automation Testing";
         String actualTitle = driver.getTitle();
 
-
         System.out.println("*** Checking For The Title ***");
 
         Assert.assertEquals(actualTitle, expectedTitle);

@@ -16,7 +16,7 @@ public class BaseTest {
         System.out.println("Load file config");
     }
 
-    @BeforeMethod
+    @BeforeClass
     public static void createDriver() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -25,7 +25,7 @@ public class BaseTest {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
     }
 
-    @AfterMethod
+    @AfterClass
     public static void closeDriver() {
         try {
             Thread.sleep(2000);
