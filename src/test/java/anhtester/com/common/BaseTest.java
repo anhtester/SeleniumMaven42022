@@ -27,6 +27,8 @@ public class BaseTest {
         //Bổ trợ cho ổn định hơn
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
+
+        System.out.println("createDriver");
     }
 
     @AfterMethod

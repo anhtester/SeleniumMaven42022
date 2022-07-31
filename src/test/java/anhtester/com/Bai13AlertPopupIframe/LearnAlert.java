@@ -24,7 +24,7 @@ public class LearnAlert extends BaseTest {
     public void testAlert_02() throws InterruptedException {
         driver.get("https://demo.anhtester.com/javascript-alert-box-demo.html");
         Thread.sleep(2000);
-        driver.findElement(By.xpath("(//button[normalize-space()='Click me!'])[2]")).click();
+        driver.findElement(By.xpath("(//button[normalize-space()='Click me!'])[2]//div[3]")).click();
         Thread.sleep(1000);
         System.out.println(driver.switchTo().alert().getText());
         Assert.assertEquals(driver.switchTo().alert().getText(), "Press a button!", "Text on Alert not match");
