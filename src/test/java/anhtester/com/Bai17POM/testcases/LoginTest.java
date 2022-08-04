@@ -2,6 +2,7 @@ package anhtester.com.Bai17POM.testcases;
 
 import anhtester.com.Bai17POM.pages.LoginPage;
 import anhtester.com.common.BaseTest;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -11,12 +12,12 @@ public class LoginTest extends BaseTest {
 
     @BeforeMethod
     public void loginTest(){
-        loginPage = new LoginPage(driver); //Truyền driver từ BaseTest sang các class Page
+        //Truyền driver từ BaseTest sang các class Page
+        loginPage = new LoginPage(driver);
     }
 
     @Test(priority = 1)
     public void testLoginValid(){
-
         loginPage.logIn("admin01", "123456");
     }
 

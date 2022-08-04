@@ -25,10 +25,10 @@ public class Projects extends BaseTest {
         System.out.println(loginPageText);
         Assert.assertEquals(loginPageText.trim(), "Welcome to HRM System", "Text không thuộc trang Login");
 
-        WebUI.setText(driver, By.id("iusername"), "admin01");
-        WebUI.setText(driver, By.id("ipassword"), "123456");
-        WebUI.clickElement(driver, By.xpath("//button[normalize-space()='Login']"), 5);
-        WebUI.clickElement(driver, By.xpath("//span[contains(text(),'Dự án')]"));
+        WebUI.setText(By.id("iusername"), "admin01");
+        WebUI.setText(By.id("ipassword"), "123456");
+        WebUI.clickElement(By.xpath("//button[normalize-space()='Login']"), 5);
+        WebUI.clickElement(By.xpath("//span[contains(text(),'Dự án')]"));
 
         //driver.findElement(By.id("iusername")).sendKeys("admin01");
         //driver.findElement(By.id("ipassword")).sendKeys("123456");
@@ -41,7 +41,7 @@ public class Projects extends BaseTest {
 
         driver.findElement(By.xpath("//a[normalize-space()='Thêm mới']")).click();
 
-        WebUI.setText(driver, By.xpath("//input[@placeholder='Tiêu đề']"), tenDuAn);
+        WebUI.setText(By.xpath("//input[@placeholder='Tiêu đề']"), tenDuAn);
 
         driver.findElement(By.xpath("//span[@id='select2-client_id-container']")).click();
 
@@ -88,8 +88,8 @@ public class Projects extends BaseTest {
         js.executeScript("arguments[0].scrollIntoView(false);", driver.findElement(By.xpath("//div[@id='xin_table_wrapper']//input")));
         driver.findElement(By.xpath("//div[@id='xin_table_wrapper']//input")).sendKeys(tenDuAn);
 
-        WebUI.waitForElementVisible(driver, By.xpath("//td[normalize-space()='" + tenDuAn + "']"));
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebUI.waitForElementVisible(By.xpath("//td[normalize-space()='" + tenDuAn + "']"));
+//        WebDriverWait wait = new WebDriverWait(Duration.ofSeconds(5));
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td[normalize-space()='" + tenDuAn + "']")));
 
         String titleDuAn = driver.findElement(By.xpath("//table[@id='xin_table']//tbody//td[1]")).getText();

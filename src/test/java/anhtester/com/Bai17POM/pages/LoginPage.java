@@ -7,11 +7,12 @@ import org.testng.Assert;
 
 public class LoginPage {
 
-    WebDriver driver;
+    private WebDriver driver;
 
     //Hàm xây dựng
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+        new WebUI(driver); //Khởi tạo giá trị cho class WebUI
     }
 
     //Login
@@ -30,41 +31,42 @@ public class LoginPage {
 
 
     public void logIn(String email, String password) {
-        WebUI.openURL(driver, "https://hrm.anhtester.com/");
-        WebUI.setText(driver, inputEmail, email);
-        WebUI.setText(driver, inputPassword, password);
-        WebUI.clickElement(driver, buttonSignin);
+        WebUI.openURL("https://hrm.anhtester.com/");
+        WebUI.setText(inputEmail, email);
+        WebUI.setText(inputPassword, password);
+        WebUI.clickElement(buttonSignin);
+
     }
 
     public void logInEmailInValid(String email, String password) {
-        WebUI.openURL(driver, "https://hrm.anhtester.com/");
-        WebUI.setText(driver, inputEmail, email);
-        WebUI.setText(driver, inputPassword, password);
-        WebUI.clickElement(driver, buttonSignin);
+        WebUI.openURL("https://hrm.anhtester.com/");
+        WebUI.setText(inputEmail, email);
+        WebUI.setText(inputPassword, password);
+        WebUI.clickElement(buttonSignin);
         //Xử lý Assert
     }
 
     public void logInPasswordInValid(String email, String password) {
-        WebUI.openURL(driver, "https://hrm.anhtester.com/");
-        WebUI.setText(driver, inputEmail, email);
-        WebUI.setText(driver, inputPassword, password);
-        WebUI.clickElement(driver, buttonSignin);
+        WebUI.openURL("https://hrm.anhtester.com/");
+        WebUI.setText(inputEmail, email);
+        WebUI.setText(inputPassword, password);
+        WebUI.clickElement(buttonSignin);
         //Xử lý Assert
     }
 
     public void resetPassword(String emailForgot) {
-        WebUI.openURL(driver, "https://hrm.anhtester.com/");
-        WebUI.clickElement(driver, linkForgotPassword);
+        WebUI.openURL("https://hrm.anhtester.com/");
+        WebUI.clickElement(linkForgotPassword);
 
-        Assert.assertEquals(WebUI.getElementText(driver, pageTextForgotPassword), "Reset your password");
+        Assert.assertEquals(WebUI.getElementText(pageTextForgotPassword), "Reset your password");
 
-        WebUI.setText(driver, inputEmailForgotPassword, emailForgot);
-        WebUI.clickElement(driver, buttonReset);
+        WebUI.setText(inputEmailForgotPassword, emailForgot);
+        WebUI.clickElement(buttonReset);
 
         //Assert cái message hiển thị thành công (tồn tại)
-        Assert.assertEquals(WebUI.getElementText(driver, alertMessageResetPassword), "Main.xin_error_msg__available");
+        Assert.assertEquals(WebUI.getElementText(alertMessageResetPassword), "Main.xin_error_msg__available");
 
-        WebUI.clickElement(driver, linkClickHere);
+        WebUI.clickElement(linkClickHere);
     }
 
 }
