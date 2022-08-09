@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite All" verbose="1">
+
+    <test name="Regression Test All">
+        <classes>
+            <class name="anhtester.com.Bai20ThucHanhPOMPart1.testcases.LoginTest" />
+            <class name="anhtester.com.Bai20ThucHanhPOMPart1.testcases.DashboardTest" />
+        </classes>
+    </test>
+
+</suite>

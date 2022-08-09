@@ -29,6 +29,7 @@ public class BaseTest {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
 
         System.out.println("createDriver: " + driver);
+
     }
 
     @AfterMethod

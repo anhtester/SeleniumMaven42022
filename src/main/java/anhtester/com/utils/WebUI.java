@@ -1,12 +1,13 @@
 package anhtester.com.utils;
 
-import org.bouncycastle.asn1.x509.UserNotice;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class WebUI {
 
@@ -15,7 +16,7 @@ public class WebUI {
 
     private static WebDriver driver;
 
-    public WebUI(WebDriver driver){
+    public WebUI(WebDriver driver) {
         WebUI.driver = driver;
     }
 
@@ -24,6 +25,19 @@ public class WebUI {
             Thread.sleep((long) (1000 * second));
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public static Boolean checkElementExist(By by) {
+        sleep(2);
+        List<WebElement> listElement = driver.findElements(by);
+
+        if (listElement.size() > 0) {
+            System.out.println("checkElementExist: " + true + " --- " + by);
+            return true;
+        } else {
+            System.out.println("checkElementExist: " + false + " --- " + by);
+            return false;
         }
     }
 
