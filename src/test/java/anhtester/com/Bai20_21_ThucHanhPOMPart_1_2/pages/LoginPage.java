@@ -1,4 +1,4 @@
-package anhtester.com.Bai20ThucHanhPOMPart1.pages;
+package anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages;
 
 import anhtester.com.utils.WebUI;
 import org.openqa.selenium.By;
@@ -8,18 +8,16 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class LoginPage {
+public class LoginPage extends CommonPage {
 
     private WebDriver driver;
     private WebDriverWait wait;
-    private DashboardPage dashboardPage;
 
     //Hàm xây dựng
     public LoginPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
-        new WebUI(driver); //Khởi tạo giá trị cho class WebUI
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        dashboardPage = new DashboardPage(driver);
     }
 
     //Login
@@ -46,7 +44,7 @@ public class LoginPage {
         //Wait for page loaded
         //Xử lý Assert
         //wait.until(ExpectedConditions.presenceOfElementLocated(dashboardPage.menuTrangChu));
-        boolean checkMenu = WebUI.checkElementExist(dashboardPage.menuTrangChu);
+        boolean checkMenu = WebUI.checkElementExist(getDashboardPage().menuTrangChu);
         Assert.assertTrue(checkMenu, "Login failed. Không tìm thấy menu Trang chủ.");
 
         return new DashboardPage(driver); //Khởi tạo trang Dashboard

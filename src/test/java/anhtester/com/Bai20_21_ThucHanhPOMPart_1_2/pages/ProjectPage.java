@@ -1,19 +1,22 @@
-package anhtester.com.Bai20ThucHanhPOMPart1.pages;
+package anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages;
 
+import anhtester.com.datatest.ConstantData;
 import anhtester.com.utils.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
-public class ProjectPage {
+public class ProjectPage extends CommonPage {
 
     WebDriver driver;
 
     public ProjectPage(WebDriver driver) {
+        super(driver);
         this.driver = driver;
         new WebUI(driver);
     }
 
+    public String pageText = "Dự án";
     public By headerPage = By.xpath("//li[@class='nav-item active']//a[contains(@href, '/erp/projects-list')]");
     By buttonThemMoi = By.xpath("//a[normalize-space()='Thêm mới']");
     By inputTieuDe = By.xpath("//input[@placeholder='Tiêu đề']");
@@ -29,8 +32,8 @@ public class ProjectPage {
         WebUI.clickElement(buttonThemMoi);
     }
 
-    public void enterData() {
-        WebUI.setText(inputTieuDe, "Project 0708A1");
+    public void enterData(String projectName) {
+        WebUI.setText(inputTieuDe, projectName);
         WebUI.clickElement(dropdownKhachHang);
         WebUI.setText(inputKhachHang, "Huong Nguyen");
         driver.findElement(inputKhachHang).sendKeys(Keys.ENTER);
@@ -55,9 +58,9 @@ public class ProjectPage {
 
     }
 
-    public void addProject() {
+    public void addProject(String projectName) {
         clickButtonThemMoi();
-        enterData();
+        enterData(projectName);
     }
 
 }

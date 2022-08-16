@@ -1,7 +1,7 @@
-package anhtester.com.Bai20ThucHanhPOMPart1.testcases;
+package anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.testcases;
 
-import anhtester.com.Bai20ThucHanhPOMPart1.pages.DashboardPage;
-import anhtester.com.Bai20ThucHanhPOMPart1.pages.LoginPage;
+import anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages.DashboardPage;
+import anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages.LoginPage;
 import anhtester.com.common.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -10,6 +10,7 @@ public class DashboardTest extends BaseTest {
 
     LoginPage loginPage;
     DashboardPage dashboardPage;
+
 
     @BeforeMethod
     public void setupTest(){
@@ -22,10 +23,10 @@ public class DashboardTest extends BaseTest {
         dashboardPage.openProject();
     }
 
-    @Test(priority = 2)
-    public void testLogout(){
-        dashboardPage = loginPage.logIn("admin01", "123456");
-        dashboardPage.logOut();
+    @Test
+    public void testNavigateToProject(){
+        dashboardPage = loginPage.logIn("leader01", "123456");
+        dashboardPage.openProject();
     }
 
 }

@@ -12,7 +12,7 @@ import java.util.List;
 public class WebUI {
 
     private static int TIMEOUT = 10;
-    private static double STEP_TIME = 0;
+    private static double STEP_TIME = 0.5;
 
     private static WebDriver driver;
 

@@ -4,8 +4,8 @@
 
     <test name="Regression Test All">
         <classes>
-            <class name="anhtester.com.Bai20ThucHanhPOMPart1.testcases.LoginTest" />
-            <class name="anhtester.com.Bai20ThucHanhPOMPart1.testcases.DashboardTest" />
+            <class name="anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.testcases.LoginTest" />
+            <class name="anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.testcases.DashboardTest" />
         </classes>
     </test>
 

@@ -1,9 +1,11 @@
-package anhtester.com.Bai20ThucHanhPOMPart1.testcases;
+package anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.testcases;
 
-import anhtester.com.Bai19PageNavigation.pages.DashboardPage;
-import anhtester.com.Bai19PageNavigation.pages.LoginPage;
-import anhtester.com.Bai19PageNavigation.pages.ProjectPage;
+import anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages.DashboardPage;
+import anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages.LoginPage;
+import anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages.ProjectPage;
 import anhtester.com.common.BaseTest;
+import anhtester.com.datatest.ConstantData;
+import anhtester.com.datatest.ProjectData;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -36,9 +38,16 @@ public class ProjectTest extends BaseTest {
 
     @Test
     public void testAddProject() {
-        dashboardPage = loginPage.logIn("admin01", "123456");
+        dashboardPage = loginPage.logIn(ConstantData.USERNAME, ConstantData.PASSWORD);
         projectPage = dashboardPage.openProject();
-        projectPage.addProject();
+        projectPage.addProject(ProjectData.CATEGORYNAME);
+    }
+
+    @Test
+    public void testNavigateToTasks(){
+        dashboardPage = loginPage.logIn("leader01", "123456");
+        projectPage = dashboardPage.openProject();
+        projectPage.openTask();
     }
 
 }
