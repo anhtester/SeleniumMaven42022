@@ -30,6 +30,7 @@ public class LoginTest extends BaseTest {
     @Test(priority = 2)
     public void testLoginWithUsernameInValid(){
         loginPage.loginWithUsernameInValid("admin0123", "123456");
+
     }
 
     @Test(priority = 3)

@@ -40,7 +40,7 @@ public class ProjectTest extends BaseTest {
     public void testAddProject() {
         dashboardPage = loginPage.logIn(ConstantData.USERNAME, ConstantData.PASSWORD);
         projectPage = dashboardPage.openProject();
-        projectPage.addProject(ProjectData.CATEGORYNAME);
+        projectPage.addProject(ProjectData.PROJECTNAME);
     }
 
     @Test
@@ -48,6 +48,7 @@ public class ProjectTest extends BaseTest {
         dashboardPage = loginPage.logIn("leader01", "123456");
         projectPage = dashboardPage.openProject();
         projectPage.openTask();
+
     }
 
 }

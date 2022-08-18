@@ -3,10 +3,12 @@ package anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages;
 import anhtester.com.utils.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 public class LoginPage extends CommonPage {
 
@@ -58,7 +60,7 @@ public class LoginPage extends CommonPage {
         //Xử lý Assert
         boolean checkAlertError = WebUI.checkElementExist(alertMessage);
         Assert.assertTrue(checkAlertError, "Fail. Error alert not display.");
-        Assert.assertEquals(WebUI.getElementText(alertMessage), "Invalid Login Credentials.", "Fail. Text not match.");
+        WebUI.verifyEquals(WebUI.getElementText(alertMessage), "Invalid Login Credentials. 123");
     }
 
     public void loginWithPasswordInValid(String username, String password) {
@@ -68,8 +70,9 @@ public class LoginPage extends CommonPage {
         WebUI.clickElement(buttonSignin);
         //Xử lý Assert
         boolean checkAlertError = WebUI.checkElementExist(alertMessage);
+
         Assert.assertTrue(checkAlertError, "Fail. Error alert not display.");
-        Assert.assertEquals(WebUI.getElementText(alertMessage), "Invalid Login Credentials.", "Fail. Text not match.");
+        WebUI.verifyEquals(WebUI.getElementText(alertMessage), "Invalid Login Credentials.");
 
     }
 
@@ -77,13 +80,13 @@ public class LoginPage extends CommonPage {
         WebUI.openURL("https://hrm.anhtester.com/");
         WebUI.clickElement(linkForgotPassword);
 
-        Assert.assertEquals(WebUI.getElementText(pageTextForgotPassword), "Reset your password");
+        WebUI.verifyEquals(WebUI.getElementText(pageTextForgotPassword), "Reset your password");
 
         WebUI.setText(inputEmailForgotPassword, emailForgot);
         WebUI.clickElement(buttonReset);
 
         //Assert cái message hiển thị thành công (tồn tại)
-        Assert.assertEquals(WebUI.getElementText(alertMessage), "Main.xin_error_msg__available");
+        WebUI.verifyEquals(WebUI.getElementText(alertMessage), "Main.xin_error_msg__available");
 
         WebUI.clickElement(linkClickHere);
     }
