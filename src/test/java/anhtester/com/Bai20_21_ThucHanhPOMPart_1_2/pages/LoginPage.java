@@ -57,6 +57,7 @@ public class LoginPage extends CommonPage {
         WebUI.setText(inputUsername, username);
         WebUI.setText(inputPassword, password);
         WebUI.clickElement(buttonSignin);
+
         //Xử lý Assert
         boolean checkAlertError = WebUI.checkElementExist(alertMessage);
         Assert.assertTrue(checkAlertError, "Fail. Error alert not display.");

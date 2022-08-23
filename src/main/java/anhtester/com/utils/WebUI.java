@@ -4,11 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,16 +49,21 @@ public class WebUI {
     }
 
     public static void verifyEquals(Object actual, Object expected) {
+        waitForPageLoaded();
+        sleep(STEP_TIME);
         logConsole("Verify equals: " + actual + " and " + expected);
         Assert.assertEquals(actual, expected, "Fail. Not match. '" + actual.toString() + "' != '" + expected.toString() + "'");
     }
 
     public static void verifyEquals(Object actual, Object expected, String message) {
+        waitForPageLoaded();
+        sleep(STEP_TIME);
         logConsole("Verify equals: " + actual + " and " + expected);
         Assert.assertEquals(actual, expected, message);
     }
 
     public static Boolean checkElementExist(By by) {
+        waitForPageLoaded();
         waitForElementVisible(by);
         sleep(2);
         List<WebElement> listElement = getWebElements(by);
@@ -72,33 +80,43 @@ public class WebUI {
     public static void openURL(String url) {
         driver.get(url);
         sleep(STEP_TIME);
+        pressF11();
         logConsole("Open: " + url);
+        waitForPageLoaded();
     }
 
     public static void clickElement(By by) {
+        waitForPageLoaded();
         waitForElementVisible(by);
         sleep(STEP_TIME);
+        highLightElement(by);
         getWebElement(by).click();
         logConsole("Click element: " + by);
     }
 
     public static void clickElement(By by, long timeout) {
+        waitForPageLoaded();
         waitForElementVisible(by);
         sleep(STEP_TIME);
+        highLightElement(by);
         getWebElement(by).click();
         logConsole("Click element: " + by);
     }
 
     public static void setText(By by, String value) {
+        waitForPageLoaded();
         waitForElementVisible(by);
         sleep(STEP_TIME);
+        highLightElement(by);
         getWebElement(by).sendKeys(value);
         logConsole("Set text: " + value + " on element " + by);
     }
 
     public static String getElementText(By by) {
+        waitForPageLoaded();
         waitForElementVisible(by);
         sleep(STEP_TIME);
+        highLightElement(by);
         String text = getWebElement(by).getText();
         logConsole("Get text: " + text);
         return text; //Trả về một giá trị kiểu String
@@ -166,8 +184,148 @@ public class WebUI {
         }
     }
 
+    //Vài hàm bổ trợ nâng cao hơn
+
+    public static void scrollToElement(By element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", getWebElement(element));
+    }
+
+    public static void scrollToElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public static void scrollToPosition(int X, int Y) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(" + X + "," + Y + ");");
+    }
+
+    public static boolean moveToElement(By toElement) {
+        try {
+            Actions action = new Actions(driver);
+            action.moveToElement(getWebElement(toElement)).release(getWebElement(toElement)).build().perform();
+            return true;
+        } catch (Exception e) {
+            logConsole(e.getMessage());
+            return false;
+        }
+    }
+
+    public static boolean moveToOffset(int X, int Y) {
+        try {
+            Actions action = new Actions(driver);
+            action.moveByOffset(X, Y).build().perform();
+            return true;
+        } catch (Exception e) {
+            logConsole(e.getMessage());
+            return false;
+        }
+    }
+
+    public static boolean hoverElement(By by) {
+        try {
+            Actions action = new Actions(driver);
+            action.moveToElement(getWebElement(by)).perform();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static boolean mouseHover(By by) {
+        try {
+            Actions action = new Actions(driver);
+            action.moveToElement(getWebElement(by)).perform();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static boolean dragAndDrop(By fromElement, By toElement) {
+        try {
+            Actions action = new Actions(driver);
+            action.dragAndDrop(getWebElement(fromElement), getWebElement(toElement)).perform();
+            //action.clickAndHold(getWebElement(fromElement)).moveToElement(getWebElement(toElement)).release(getWebElement(toElement)).build().perform();
+            return true;
+        } catch (Exception e) {
+            logConsole(e.getMessage());
+            return false;
+        }
+    }
+
+    public static boolean dragAndDropElement(By fromElement, By toElement) {
+        try {
+            Actions action = new Actions(driver);
+            action.clickAndHold(getWebElement(fromElement)).moveToElement(getWebElement(toElement)).release(getWebElement(toElement)).build().perform();
+            return true;
+        } catch (Exception e) {
+            logConsole(e.getMessage());
+            return false;
+        }
+    }
+
+    public static boolean dragAndDropOffset(By fromElement, int X, int Y) {
+        try {
+            Actions action = new Actions(driver);
+            //Tính từ vị trí click chuột đầu tiên (clickAndHold)
+            action.clickAndHold(getWebElement(fromElement)).pause(1).moveByOffset(X, Y).release().build().perform();
+            return true;
+        } catch (Exception e) {
+            logConsole(e.getMessage());
+            return false;
+        }
+    }
+
+    public static boolean pressENTER() {
+        try {
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static boolean pressESC() {
+        try {
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_ESCAPE);
+            robot.keyRelease(KeyEvent.VK_ESCAPE);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    
+    public static boolean pressF11() {
+        try {
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_F11);
+            robot.keyRelease(KeyEvent.VK_F11);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
     /**
+     * @param by truyền vào đối tượng element dạng By
+     * @return Tô màu viền đỏ cho Element trên website
+     */
+    public static WebElement highLightElement(By by) {
+        // Tô màu border ngoài chính element chỉ định - màu đỏ (có thể đổi màu khác)
+        if (driver instanceof JavascriptExecutor) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].style.border='3px solid red'", getWebElement(by));
+            sleep(1);
+        }
+        return getWebElement(by);
+    }
+
+    /**
+     * Wait for Page
      * Chờ đợi trang tải xong (Javascript) với thời gian thiết lập sẵn
      */
     public static void waitForPageLoaded() {
