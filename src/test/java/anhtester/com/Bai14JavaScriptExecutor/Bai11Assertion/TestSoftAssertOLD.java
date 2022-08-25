@@ -1,11 +1,11 @@
 package anhtester.com.Bai14JavaScriptExecutor.Bai11Assertion;
 
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class TestSoftAssert extends BaseTest {
+public class TestSoftAssertOLD extends BaseTestOLD {
 
     @Test(priority = 1)
     public void RunTest() {

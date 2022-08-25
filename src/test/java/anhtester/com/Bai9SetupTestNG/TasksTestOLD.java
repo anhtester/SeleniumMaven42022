@@ -1,10 +1,10 @@
 package anhtester.com.Bai9SetupTestNG;
 
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class TasksTest extends BaseTest {
+public class TasksTestOLD extends BaseTestOLD {
 
     @Test(priority = 1, description = "Login to HRM system")
     public void loginCRM(){

@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite All" verbose="1">
+    <parameter name="browser" value="edge"></parameter>
+    <suite-files>
+        <suite-file path="SuiteLogin.xml"></suite-file>
+        <suite-file path="SuiteDashboard.xml"></suite-file>
+    </suite-files>
+
+</suite>

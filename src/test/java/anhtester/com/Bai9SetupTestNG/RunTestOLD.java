@@ -1,11 +1,10 @@
 package anhtester.com.Bai9SetupTestNG;
 
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RunTest extends BaseTest {
+public class RunTestOLD extends BaseTestOLD {
 
     @Test
     public void loginCRM(){

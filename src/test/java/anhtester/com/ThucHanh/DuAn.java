@@ -1,6 +1,6 @@
 package anhtester.com.ThucHanh;
 
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class DuAn extends BaseTest {
+public class DuAn extends BaseTestOLD {
 
     @Test(priority = 1)
     public void loginToHRM() throws InterruptedException {

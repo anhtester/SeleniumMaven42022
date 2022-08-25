@@ -1,10 +1,10 @@
 package anhtester.com.Bai13AlertPopupIframe;
 
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class LearnIFrame extends BaseTest {
+public class LearnIFrame extends BaseTestOLD {
 
     @Test
     public void handleIFrame01() throws InterruptedException {

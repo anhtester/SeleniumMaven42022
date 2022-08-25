@@ -1,7 +1,7 @@
-package anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.testcases;
+package anhtester.com.Bai24ParameterMultiBrowser.testcases;
 
-import anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages.CommonPage;
-import anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages.LoginPage;
+import anhtester.com.Bai24ParameterMultiBrowser.pages.CommonPage;
+import anhtester.com.Bai24ParameterMultiBrowser.pages.LoginPage;
 import anhtester.com.common.BaseTest;
 import anhtester.com.datatest.ConstantData;
 import anhtester.com.utils.WebUI;
@@ -15,7 +15,7 @@ public class LoginTest extends BaseTest {
 
     @BeforeMethod
     public void loginTest(){
-        //Truyền driver từ BaseTest sang các class Page
+        //Truyền driver từ BaseTestOLD sang các class Page
         loginPage = new LoginPage(driver);
         commonPage = new CommonPage(driver);
     }

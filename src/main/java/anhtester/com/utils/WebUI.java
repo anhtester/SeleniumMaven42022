@@ -19,7 +19,7 @@ import java.util.List;
 public class WebUI {
 
     private final static int TIMEOUT = 10;
-    private final static double STEP_TIME = 0.5;
+    private final static double STEP_TIME = 0;
     private final static int PAGE_LOAD_TIMEOUT = 20;
 
     private static WebDriver driver;
@@ -80,7 +80,6 @@ public class WebUI {
     public static void openURL(String url) {
         driver.get(url);
         sleep(STEP_TIME);
-        pressF11();
         logConsole("Open: " + url);
         waitForPageLoaded();
     }
@@ -89,7 +88,6 @@ public class WebUI {
         waitForPageLoaded();
         waitForElementVisible(by);
         sleep(STEP_TIME);
-        highLightElement(by);
         getWebElement(by).click();
         logConsole("Click element: " + by);
     }
@@ -98,7 +96,6 @@ public class WebUI {
         waitForPageLoaded();
         waitForElementVisible(by);
         sleep(STEP_TIME);
-        highLightElement(by);
         getWebElement(by).click();
         logConsole("Click element: " + by);
     }
@@ -107,7 +104,6 @@ public class WebUI {
         waitForPageLoaded();
         waitForElementVisible(by);
         sleep(STEP_TIME);
-        highLightElement(by);
         getWebElement(by).sendKeys(value);
         logConsole("Set text: " + value + " on element " + by);
     }
@@ -116,7 +112,6 @@ public class WebUI {
         waitForPageLoaded();
         waitForElementVisible(by);
         sleep(STEP_TIME);
-        highLightElement(by);
         String text = getWebElement(by).getText();
         logConsole("Get text: " + text);
         return text; //Trả về một giá trị kiểu String

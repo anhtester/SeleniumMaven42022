@@ -1,11 +1,11 @@
 package anhtester.com.Bai8DropdownRadioCheckbox;
 
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-public class LearnDropdownListDynamic extends BaseTest {
+public class LearnDropdownListDynamic extends BaseTestOLD {
 
     public static void main(String[] args) throws InterruptedException {
         createDriver();

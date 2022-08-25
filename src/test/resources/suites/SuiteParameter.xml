@@ -1,0 +1,47 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite Parameter" verbose="1">
+    <parameter name="Number2" value="15"></parameter>
+
+<!--    <test name="Sum Number 1">-->
+<!--        <parameter name="Number2" value="10"></parameter>-->
+<!--        <parameter name="Message" value="Kết quả cộng 2 số là"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="anhtester.com.Bai24ParameterMultiBrowser.TestParameter" />-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="Sum Number 2">-->
+<!--        <parameter name="Number1" value="10"></parameter>-->
+<!--        <parameter name="Message" value="Kết quả cộng 2 số là"></parameter>-->
+<!--        <classes>-->
+<!--            <class name="anhtester.com.Bai24ParameterMultiBrowser.TestParameter" />-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Login Parameter 1">
+        <parameter name="username" value="admin01"></parameter>
+        <parameter name="password" value="123456"></parameter>
+        <classes>
+            <class name="anhtester.com.Bai24ParameterMultiBrowser.LoginTestOLDParameter">
+                <methods>
+                    <include name="testLoginSuccess" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Login Parameter 2">
+        <parameter name="username" value="admin012345"></parameter>
+        <parameter name="password" value="123456"></parameter>
+        <classes>
+            <class name="anhtester.com.Bai24ParameterMultiBrowser.LoginTestOLDParameter">
+                <methods>
+                    <include name="testLoginWithUsernameInValid" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

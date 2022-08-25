@@ -1,12 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Suite" verbose="1">
+<suite name="Suite All" verbose="1">
 
-    <test name="Login Test">
+    <test name="Regression Test All">
+        <parameter name="browser" value="firefox"></parameter>
         <classes>
-            <class name="anhtester.com.Bai17POM.testcases.LoginTest">
-
-            </class>
+            <class name="anhtester.com.Bai24ParameterMultiBrowser.testcases.LoginTest" />
         </classes>
     </test>
 

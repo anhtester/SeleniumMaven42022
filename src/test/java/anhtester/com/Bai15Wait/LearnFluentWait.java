@@ -1,6 +1,6 @@
 package anhtester.com.Bai15Wait;
 
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class LearnFluentWait extends BaseTest {
+public class LearnFluentWait extends BaseTestOLD {
 
     @Test(priority = 3)
     public void FluentWaitDemo() throws InterruptedException {

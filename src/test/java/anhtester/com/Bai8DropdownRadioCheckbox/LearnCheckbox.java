@@ -1,12 +1,12 @@
 package anhtester.com.Bai8DropdownRadioCheckbox;
 
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class LearnCheckbox extends BaseTest {
+public class LearnCheckbox extends BaseTestOLD {
 
     public static void main(String[] args) throws InterruptedException {
 

@@ -1,12 +1,12 @@
 package anhtester.com.Bai14JavaScriptExecutor;
 
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class LearnJSExecutor extends BaseTest {
+public class LearnJSExecutor extends BaseTestOLD {
 
     JavascriptExecutor js; //khai báo
 

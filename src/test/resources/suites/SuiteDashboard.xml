@@ -3,9 +3,9 @@
 <suite name="Suite All" verbose="1">
 
     <test name="Regression Test All">
+        <parameter name="browser" value="edge"></parameter>
         <classes>
-            <class name="anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.testcases.LoginTest" />
-            <class name="anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.testcases.DashboardTest" />
+            <class name="anhtester.com.Bai24ParameterMultiBrowser.testcases.DashboardTest" />
         </classes>
     </test>
 

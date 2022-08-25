@@ -1,17 +1,17 @@
 package anhtester.com.Bai19PageNavigation.testcases;
 
 import anhtester.com.Bai19PageNavigation.pages.LoginPage;
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTest extends BaseTest {
+public class LoginTestOLD extends BaseTestOLD {
 
     public LoginPage loginPage;
 
     @BeforeMethod
     public void loginTest(){
-        //Truyền driver từ BaseTest sang các class Page
+        //Truyền driver từ BaseTestOLD sang các class Page
         loginPage = new LoginPage(driver);
     }
 

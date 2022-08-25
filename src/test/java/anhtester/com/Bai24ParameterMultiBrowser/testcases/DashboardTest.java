@@ -1,4 +1,4 @@
-package anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.testcases;
+package anhtester.com.Bai24ParameterMultiBrowser.testcases;
 
 import anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages.DashboardPage;
 import anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages.LoginPage;

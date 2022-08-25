@@ -1,12 +1,12 @@
 package anhtester.com.Bai15Wait;
 
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class LearnImplicitWait extends BaseTest {
+public class LearnImplicitWait extends BaseTestOLD {
 
     @Test(priority = 1)
     public void ImplicitWaitDemo() {

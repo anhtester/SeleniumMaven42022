@@ -1,6 +1,6 @@
 package anhtester.com.Bai12ActionRobotClass;
 
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class LearnActionClass extends BaseTest {
+public class LearnActionClass extends BaseTestOLD {
 
     @Test
     public void TestSendKeys() throws InterruptedException {

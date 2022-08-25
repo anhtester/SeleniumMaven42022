@@ -4,19 +4,13 @@
 
     <test name="Regression Test">
         <classes>
-            <class name="anhtester.com.Bai9SetupTestNG.TasksTest" />
+            <class name="anhtester.com.Bai9SetupTestNG.TasksTestOLD" />
         </classes>
     </test>
 
-<!--    <test name="Sanity Test">-->
-<!--        <packages>-->
-<!--            <package name="anhtester.com.Bai9SetupTestNG" />-->
-<!--        </packages>-->
-<!--    </test>-->
-
     <test name="Smoke Test">
         <classes>
-            <class name="anhtester.com.Bai9SetupTestNG.RunTest">
+            <class name="anhtester.com.Bai9SetupTestNG.RunTestOLD">
                 <methods>
                     <include name="openProjectPage"/>
                     <include name="openProjectPage"/>

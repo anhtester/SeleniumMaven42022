@@ -3,13 +3,13 @@ package anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.testcases;
 import anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages.DashboardPage;
 import anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages.LoginPage;
 import anhtester.com.Bai20_21_ThucHanhPOMPart_1_2.pages.ProjectPage;
-import anhtester.com.common.BaseTest;
+import anhtester.com.common.BaseTestOLD;
 import anhtester.com.datatest.ConstantData;
 import anhtester.com.datatest.ProjectData;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class ProjectTest extends BaseTest {
+public class ProjectTestOLD extends BaseTestOLD {
 
     private LoginPage loginPage;
     private DashboardPage dashboardPage;
