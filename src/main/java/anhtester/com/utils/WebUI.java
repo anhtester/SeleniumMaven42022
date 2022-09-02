@@ -25,7 +25,7 @@ public class WebUI {
     private static WebDriver driver;
 
     public WebUI(WebDriver driver) {
-        WebUI.driver = driver;
+        this.driver = driver;
     }
 
     public static void sleep(double second) {

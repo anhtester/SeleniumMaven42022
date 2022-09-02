@@ -1,5 +1,6 @@
 package anhtester.com.common;
 
+import anhtester.com.utils.WebUI;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,10 +18,16 @@ public class BaseTest {
 
     public static WebDriver driver;
 
+    //Luôn chạy trước trong 1 class
+    public BaseTest(){
+        //new WebUI(driver); //driver = null
+    }
+
     @BeforeMethod
     @Parameters({"browser"})
     public static void createDriver(@Optional("chrome") String browserName) {
         setupBrowser(browserName);
+        new WebUI(driver);
     }
 
     //Viết hàm trung gian để lựa chọn Browser cần chạy với giá trị tham số "browser" bên trên truyền vào
