@@ -20,7 +20,6 @@ public class BaseTest {
 
     //Luôn chạy trước trong 1 class
     public BaseTest(){
-        //new WebUI(driver); //driver = null
     }
 
     @BeforeMethod
@@ -86,20 +85,6 @@ public class BaseTest {
         if(driver != null) {
             driver.quit();
         }
-    }
-
-    public WebElement waitForElementVisible(By by, int timeout){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-
-        return driver.findElement(by);
-    }
-
-    public WebElement waitForElementPresent(By by, int timeout){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
-        wait.until(ExpectedConditions.presenceOfElementLocated(by));
-
-        return driver.findElement(by);
     }
 
 }

@@ -11,13 +11,11 @@ import java.time.Duration;
 public class LoginPage extends CommonPage {
 
     private WebDriver driver;
-    private WebDriverWait wait;
 
     //Hàm xây dựng
     public LoginPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     //Login
