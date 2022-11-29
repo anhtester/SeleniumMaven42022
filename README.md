@@ -1,1 +1,8 @@
-Source code dạy automation test khoá 4/2022 | Anh Tester
+## ♻️ Selenium Maven 04/2022
+Source code dạy automation test Selenium Java khoá 04/2022 từ bài 1 đến bài 24
+
+🔅 Khoá học Selenium WebDriver with Java Basic to Advanced | Anh Tester
+
+https://anhtester.com/course/selenium-webdriver-with-java-basic-to-advanced-c4.html
+
+![alt text](https://anhtester.com/uploads/logo/logo_anh_tester_github_v3.jpg)
