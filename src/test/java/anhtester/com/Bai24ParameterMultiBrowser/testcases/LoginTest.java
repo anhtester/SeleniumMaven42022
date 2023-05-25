@@ -14,34 +14,32 @@ public class LoginTest extends BaseTest {
     public CommonPage commonPage;
 
     @BeforeMethod
-    public void loginTest(){
+    public void loginTest() {
         //Truyền driver từ BaseTestOLD sang các class Page
         loginPage = new LoginPage(driver);
         commonPage = new CommonPage(driver);
     }
 
     @Test(priority = 1)
-    public void testLoginSuccess(){
+    public void testLoginSuccess() {
         loginPage.logIn(ConstantData.USERNAME, ConstantData.PASSWORD);
         commonPage.dangXuat();
         WebUI.sleep(2);
     }
 
     @Test(priority = 2)
-    public void testLoginWithUsernameInValid(){
-        loginPage.loginWithUsernameInValid("admin0123", "123456");
-
+    public void testLoginWithUsernameInValid() {
+        loginPage.loginWithUsernameInValid("admin123", "123456");
     }
 
     @Test(priority = 3)
-    public void testLoginWithPasswordInValid(){
-        loginPage.loginWithPasswordInValid("admin01", "123456789");
+    public void testLoginWithPasswordInValid() {
+        loginPage.loginWithPasswordInValid("frances.burns", "123456789");
     }
 
     @Test(priority = 4)
-    public void testForgotPassword(){
+    public void testForgotPassword() {
         loginPage.resetPassword("client01@mailinator.com");
-
     }
 
 }

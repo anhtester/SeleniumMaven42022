@@ -25,6 +25,7 @@ public class BaseTest {
     @BeforeMethod
     @Parameters({"browser"})
     public static void createDriver(@Optional("chrome") String browserName) {
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
         setupBrowser(browserName);
         new WebUI(driver);
     }

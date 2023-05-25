@@ -14,6 +14,6 @@ public class DashboardPage extends CommonPage {
         new WebUI(driver);
     }
 
-    public By menuTrangChu = By.xpath("//a[normalize-space()='Trang chủ']");
+    public By menuTrangChu = By.xpath("//a[normalize-space()='Home']");
 
 }

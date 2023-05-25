@@ -34,7 +34,7 @@ public class LoginPage extends CommonPage {
 
 
     public DashboardPage logIn(String username, String password) {
-        WebUI.openURL("https://hrm.anhtester.com/");
+        WebUI.openURL("https://app.hrsale.com/");
         WebUI.setText(inputUsername, username);
         WebUI.setText(inputPassword, password);
         WebUI.clickElement(buttonSignin);
@@ -49,7 +49,7 @@ public class LoginPage extends CommonPage {
     }
 
     public void loginWithUsernameInValid(String username, String password) {
-        WebUI.openURL("https://hrm.anhtester.com/");
+        WebUI.openURL("https://app.hrsale.com/");
         WebUI.setText(inputUsername, username);
         WebUI.setText(inputPassword, password);
         WebUI.clickElement(buttonSignin);
@@ -57,11 +57,11 @@ public class LoginPage extends CommonPage {
         //Xử lý Assert
         boolean checkAlertError = WebUI.checkElementExist(alertMessage);
         Assert.assertTrue(checkAlertError, "Fail. Error alert not display.");
-        WebUI.verifyEquals(WebUI.getElementText(alertMessage), "Invalid Login Credentials. 123");
+        WebUI.verifyEquals(WebUI.getElementText(alertMessage), "Invalid Login Credentials.");
     }
 
     public void loginWithPasswordInValid(String username, String password) {
-        WebUI.openURL("https://hrm.anhtester.com/");
+        WebUI.openURL("https://app.hrsale.com/");
         WebUI.setText(inputUsername, username);
         WebUI.setText(inputPassword, password);
         WebUI.clickElement(buttonSignin);
@@ -74,7 +74,7 @@ public class LoginPage extends CommonPage {
     }
 
     public void resetPassword(String emailForgot) {
-        WebUI.openURL("https://hrm.anhtester.com/");
+        WebUI.openURL("https://app.hrsale.com/");
         WebUI.clickElement(linkForgotPassword);
 
         WebUI.verifyEquals(WebUI.getElementText(pageTextForgotPassword), "Reset your password");
@@ -83,7 +83,7 @@ public class LoginPage extends CommonPage {
         WebUI.clickElement(buttonReset);
 
         //Assert cái message hiển thị thành công (tồn tại)
-        WebUI.verifyEquals(WebUI.getElementText(alertMessage), "Main.xin_error_msg__available");
+        WebUI.verifyEquals(WebUI.getElementText(alertMessage), "Main.xin_error_msg_not");
 
         WebUI.clickElement(linkClickHere);
     }
