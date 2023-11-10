@@ -78,7 +78,7 @@ public class BaseTest {
     public static void closeDriver() {
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0)); //Reset timeout
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

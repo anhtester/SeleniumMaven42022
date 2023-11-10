@@ -34,7 +34,7 @@ public class LoginPage extends CommonPage {
 
 
     public DashboardPage logIn(String username, String password) {
-        WebUI.openURL("https://app.hrsale.com/");
+        WebUI.openURL("https://hrm.anhtester.com/");
         WebUI.setText(inputUsername, username);
         WebUI.setText(inputPassword, password);
         WebUI.clickElement(buttonSignin);

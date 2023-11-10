@@ -24,7 +24,7 @@ public class LoginTest extends BaseTest {
     public void testLoginSuccess() {
         loginPage.logIn(ConstantData.USERNAME, ConstantData.PASSWORD);
         commonPage.dangXuat();
-        WebUI.sleep(2);
+        WebUI.sleep(1);
     }
 
     @Test(priority = 2)
